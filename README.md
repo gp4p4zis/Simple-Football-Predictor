@@ -2,6 +2,8 @@
 
 A machine learning-based football match outcome prediction tool using historical match data and betting odds. Built with Django, the app predicts match results (home win, draw, away win) and generates bookmaker-style odds.
 
+Data used is taken from footballdata.co.uk, and filtered to include specicif columns mentioned below, in a CSV form.
+
 ---
 
 ## Features
