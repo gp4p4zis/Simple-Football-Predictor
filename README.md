@@ -86,5 +86,3 @@ python manage.py runserver
 * **Algorithm:** Logistic Regression (multinomial) with scaled features.
 * **Odds Conversion:** Probabilities are converted to odds with a bookmaker margin of 5%, including draw adjustment.
 
-
-\*You can add screensho
