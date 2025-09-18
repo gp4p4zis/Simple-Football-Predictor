@@ -2,7 +2,7 @@
 
 A machine learning-based football match outcome prediction tool using historical match data and betting odds. Built with Django, the app predicts match results (home win, draw, away win) and generates bookmaker-style odds.
 
-Data used is taken from footballdata.co.uk, and filtered to include specicif columns mentioned below, in a CSV form.
+Data used is taken from **footballdata.co.uk**, and filtered to include specicif columns mentioned below, in a CSV form.
 
 ---
 
@@ -71,13 +71,13 @@ python manage.py runserver
 
 ## Usage
 
-1. Visit 127.0.0.1:8000/matches/upload. You will be prompted to login with your superuser.
+1. Visit **127.0.0.1:8000/matches/upload**. You will be prompted to login with your superuser.
 2. (optional, if you want new data) Upload match data CSVs via the **Upload Matches CSV** form.
 
    * CSV should include columns:
      `date, home_team, away_team, home_score, away_score, HS, AS, HST, AST, HC, AC, B365H, B365D, B365A`
-3. Visit 127.0.0.1:8000/admin/ and click on Matchs -> ADD MATCH. Then, select home/away teams and enter a kickoff time, then save. The match needs to be "Upcoming".
-4. Visit 127.0.0.1:8000/matches. You can view your upcoming matches there and by clicking on them, the prediction is made.
+3. Visit **127.0.0.1:8000/admin/** and click on Matchs -> ADD MATCH. Then, select home/away teams and enter a kickoff time, then save. The match needs to be "Upcoming".
+4. Visit **127.0.0.1:8000/matches**. You can view your upcoming matches there and by clicking on them, the prediction is made.
 
 ---
 
