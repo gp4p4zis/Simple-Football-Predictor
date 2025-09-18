@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Football Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 1rem auto; max-width: 880px; padding: 0 1rem; }
+      header, footer { margin: 1rem 0; }
+      nav a { margin-right: .75rem; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
+      .muted { color: #666; }
+      .pill { padding: .1rem .5rem; border: 1px solid #ccc; border-radius: 999px; font-size: .9rem; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .75rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Football Match Predictor</h1>
+      <nav>
+        <a href="{% url 'match_list' %}">Matches</a>
+        {% if user.is_authenticated %}
+          <span class="muted">Hi, {{ user.username }}</span>
+          <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </nav>
+      {% for message in messages %}<div class="card">{{ message }}</div>{% endfor %}
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="muted">Built with Django — step 1 ✅</footer>
+  </body>
+</html>

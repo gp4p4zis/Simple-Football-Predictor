@@ -1,0 +1,31 @@
+{% extends "matches/base.html" %}
+{% block content %}
+  <h2>Upcoming</h2>
+  <div class="grid">
+    {% for m in upcoming %}
+      <div class="card">
+        <div><strong>{{ m.home_team }}</strong> vs <strong>{{ m.away_team }}</strong></div>
+        <div class="muted">{{ m.kickoff_at|date:"D, M j, H:i" }}</div>
+        <a href="{% url 'match_detail' m.pk %}">Details & Predict →</a>
+      </div>
+    {% empty %}
+      <p>No upcoming matches.</p>
+    {% endfor %}
+  </div>
+
+  <h2>Recent</h2>
+  <div class="grid">
+    {% for m in recent %}
+      <div class="card">
+        <div><strong>{{ m.home_team }}</strong> vs <strong>{{ m.away_team }}</strong></div>
+        <div class="muted">{{ m.kickoff_at|date:"D, M j, H:i" }}</div>
+        {% if m.status == "FINISHED" %}
+          <div class="pill">FT {{ m.home_score }}–{{ m.away_score }}</div>
+        {% endif %}
+        <a href="{% url 'match_detail' m.pk %}">View →</a>
+      </div>
+    {% empty %}
+      <p>No recent matches.</p>
+    {% endfor %}
+  </div>
+{% endblock %}
